@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color Palette Generator</title>
+    <style>
+        .wrapper {
+            max-width: 1000px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 200px);
+            grid-gap: 10px;
+        }
+
+        .color {
+            display: flex;
+            height: 200px;
+            border: 1px solid #28282B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Color Palette Generator</h1>
+        <div class="grid-container">
+            {% for color in colors %}
+                <div class="color" style="background-color: {{ color }}">
+                    <div>{{ color }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        Generated with <a href="https://github.com/ricardobarantini/color-palette-generator/" target="_blank">Color Palette Generator</a>
+    </footer>
+</body>
+</html>
+
