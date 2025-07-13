@@ -13,3 +13,7 @@ composer install
 ## Usage
 
 `php color-palette-generator.php <input_path> <output_path>`
+
+## License
+
+[MIT License](./LICENSE)
