@@ -1,0 +1,23 @@
+{
+  "name": "ricardobarantini/color-palette-generator",
+  "description": "Create a color palette page to make easier to visualize colors",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "ColorPaletteGenerator\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ricardo Barantini",
+      "email": "ricardobarantini@protonmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^7.3"
+  },
+  "bin": [
+    "bin/cpg"
+  ]
+}
