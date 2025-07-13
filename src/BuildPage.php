@@ -2,6 +2,9 @@
 
 namespace ColorPaletteGenerator;
 
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+
 class BuildPage
 {
     protected array $colors;
@@ -17,31 +20,13 @@ class BuildPage
         return $this->colors;
     }
 
-    protected function buildPalette(): string
-    {
-        $stubColor = file_get_contents(__DIR__."/../stubs/Color.html.stub");
-
-        $palette = "";
-
-        foreach ($this->getColors() as $key => $value) {
-            $var = [
-              '{{ color }}' => $value,
-            ];
-
-            $palette .= str_replace(array_keys($var), array_values($var), $stubColor);
-        }
-
-        return $palette;
-    }
-
     public function build(): string
     {
-        $template = file_get_contents(__DIR__."/../stubs/ColorPalette.html.stub");
+        $loader = new FilesystemLoader(__DIR__."/../views");
+        $twig = new Environment($loader);
 
-        $var = [
-          '{{ colors }}' => $this->buildPalette()
-        ];
-
-        return str_replace(array_keys($var), array_values($var), $template);
+        return $twig->render('base.html.twig', [
+            "colors" => $this->getColors(),
+        ]);
     }
 }

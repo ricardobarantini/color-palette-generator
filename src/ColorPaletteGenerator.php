@@ -55,7 +55,7 @@ final class ColorPaletteGenerator implements ColorPaletteGeneratorInterface
             "json" => $extractData->json($this->filePath)
         };
 
-        $template = (new BuildPage())->setColors($data)->build($data);
+        $template = (new BuildPage())->setColors($data)->build();
 
         file_put_contents($this->getOutputPath(), $template);
 
