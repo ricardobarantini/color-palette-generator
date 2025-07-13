@@ -16,8 +16,5 @@
   ],
   "require": {
     "symfony/console": "^7.3"
-  },
-  "bin": [
-    "bin/cpg"
-  ]
+  }
 }
