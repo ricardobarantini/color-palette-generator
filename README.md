@@ -5,7 +5,7 @@ Simple PHP command for generate a html page to visualize color palettes provided
 ## Installation
 
 ```bash
-git clone
+git clone https://github.com/ricardobarantini/color-palette-generator.git
 cd color-palette-generator
 composer install
 ```
