@@ -1,3 +1,0 @@
-<div style="background-color: {{ color }}; height: 250px">
-  {{ color }}
-  </div>
